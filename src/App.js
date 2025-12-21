@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom"
+import { Navbar } from "./Components/navbar"
+import { Footer } from "./Components/footer"
+import HomePage from "./Containers/Home/Home"
+import AboutPage from "./Containers/About/About"
+import ServicesPage from "./Containers/Services/Services"
+import ContactPage from "./Containers/Contact/Contact"
+import LoginPage from "./Containers/Login/Login"
+import SignupPage from "./Containers/SignUp/SignUp"
+import AdminPage from "./Containers/Admin/Admin"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/contact" element={<ContactPage/>}/>
+          <Route path="/login" element={<LoginPage/>}/>
+          <Route path="/signup" element={<SignupPage/>}/>
+          <Route path="/admin" element={<AdminPage/>}/>
+        </Routes>
+      </main>
+      <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
