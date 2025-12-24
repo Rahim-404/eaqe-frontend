@@ -27,7 +27,7 @@ export default function LoginPage() {
 
     const result = true // Todo : result 
 
-    if (result.success) {
+    if (result) {
       navigate("/admin")
       window.location.reload()
     } else {
